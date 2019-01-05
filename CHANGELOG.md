@@ -1,3 +1,7 @@
+## [0.0.6] - 1/5/2019
+
+* updated license
+
 ## [0.0.5] - 1/5/2019
 
 * added recording of usage example
