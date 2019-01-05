@@ -219,8 +219,6 @@ class _MonthPage extends StatelessWidget {
 
     int _thisMonth = _dateTime.month;
 
-    debugPrint(_dateTime.day.toString() + " " + _dayOfWeek.toString());
-
     DateTime _currentDate =
     _dateTime.subtract(Duration(days: (_dayOfWeek % 7)));
     // DateTime for upper left most day in the calendar

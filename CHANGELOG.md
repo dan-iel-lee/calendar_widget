@@ -1,3 +1,15 @@
-## [0.0.1] - TODO: Add release date.
+## [0.0.4] - 1/5/2019
 
-* TODO: Describe initial release.
+* added example
+
+## [0.0.3] - 1/5/2019
+
+* removed log statements
+
+## [0.0.2] - 1/5/2019
+
+* Added license information
+
+## [0.0.1] - 1/5/2019
+
+* First release! Everything should be working as described. Will upload more detailed README in the future
