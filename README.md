@@ -13,3 +13,8 @@ For installation information see [here](https://pub.dartlang.org/packages/calend
 | No | height | `double` | calculated based on width |
 | No | onTapListener | `TapListener` | |
 | No | highlightColor | `Color` | theme accent color |
+
+## Example
+See folder example/ for an example of usage.
+
+![alt text](https://raw.githubusercontent.com/username/calendar_widget/master/example/calendar_widget_example_gif.gif)
