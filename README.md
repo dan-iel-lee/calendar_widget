@@ -17,4 +17,4 @@ For installation information see [here](https://pub.dartlang.org/packages/calend
 ## Example
 See folder example/ for an example of usage.
 
-![alt text](https://raw.githubusercontent.com/username/calendar_widget/master/example/calendar_widget_example_gif.gif)
+![calendar usage example](https://raw.githubusercontent.com/dan-iel-lee/calendar_widget/master/example/calendar_widget_example_gif.gif)
