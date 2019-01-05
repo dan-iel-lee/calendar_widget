@@ -1,3 +1,7 @@
+## [0.0.5] - 1/5/2019
+
+* added recording of usage example
+
 ## [0.0.4] - 1/5/2019
 
 * added example
