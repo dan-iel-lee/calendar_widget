@@ -1,7 +1,7 @@
 name: calendar_widget
 description: A Flutter package for a calendar widget. Shows a scrollable month view and allows
   for highlighting of days and touch actions.
-version: 0.0.6
+version: 0.1.0
 author: Daniel Lee <laniel@seas.upenn.edu>
 homepage: https://github.com/dan-iel-lee
 

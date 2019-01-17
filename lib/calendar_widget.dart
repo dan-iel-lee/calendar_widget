@@ -14,14 +14,16 @@ final double _maxRows = 6; // the most rows the calendar will have is 6
 
 final double _luminanceThreshold = 0.17912878;
 
+final int _maxPage = 9007199300000; // page number to set initial page to if enable future
+
 class Calendar extends StatefulWidget {
   final _Values vals;
 
   // TODO: deal with height
   Calendar(
-      {highlighter, @required width, height, onTapListener, highlightColor})
+      {highlighter, @required width, height, onTapListener, highlightColor, enableFuture})
       : vals =
-  _Values(highlighter, width, height, onTapListener, highlightColor);
+  _Values(highlighter, width, height, onTapListener, highlightColor, enableFuture);
 
   static int monthLength(DateTime dt) {
     int nextMonth = dt.month + 1;
@@ -95,12 +97,15 @@ class _Values {
   Color highlightColor;
   bool whiteText;
 
+  final enableFuture; // whether or not to allow access to future months
+
   _Values(
       [this.highlighter,
         this.width,
         this.height,
         this.onTapListener,
-        this.highlightColor]);
+        this.highlightColor,
+        this.enableFuture = false]);
 }
 
 class _CalendarState extends State<Calendar> {
@@ -112,7 +117,13 @@ class _CalendarState extends State<Calendar> {
 
   @override
   Widget build(BuildContext context) {
-    vals.controller = new PageController(); // controller for the PageView
+    // allow for future months by setting initial page absurdly high
+    int _initialPage = 0;
+    if (vals.enableFuture != null && vals.enableFuture) {
+      _initialPage = _maxPage;
+    }
+
+    vals.controller = new PageController(initialPage: _initialPage); // controller for the PageView
     // default height
     if (vals.height == null) {
       vals.height = max(_iconButtonSize, Calendar._headlineTextSize(context)) +
@@ -135,7 +146,8 @@ class _CalendarState extends State<Calendar> {
         child: PageView.builder(
           controller: vals.controller,
           reverse: true,
-          itemBuilder: (BuildContext context, int index) {
+          itemBuilder: (BuildContext context, int page) {
+            final index = page - _initialPage;
             // make DateTime for this Month and Year
             int _month = _currentDate.month - index;
             int _year = _currentDate.year;
@@ -143,6 +155,8 @@ class _CalendarState extends State<Calendar> {
               _month += 12;
               _year--;
             }
+
+            debugPrint(_month.toString() + " " + _year.toString() + " " + index.toString());
 
             // make highlighted list
             final thisDate = DateTime(_year, _month);

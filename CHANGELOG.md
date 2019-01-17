@@ -1,3 +1,7 @@
+## [0.1.0] - 1/16/2019
+
+* added ability to allow for scrolling to the future
+
 ## [0.0.6] - 1/5/2019
 
 * updated license
